@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="vue.min.js"></script>
+    <title>Vue js</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="div">
+            <img @click="img1=true;ok()" src="https://img.icons8.com/material-outlined/48/000000/filled-like.png" width="100%" />
+            <img class="img1" @click="img1=false" src="https://img.icons8.com/color/48/000000/filled-like.png" height="100%" v-if="img1">
+
+
+        </div>
+
+        <div class="text">
+            Hello tik tok {{item}}
+        </div>
+
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            img: true,
+            img1: false,
+            item: 0
+        },
+        methods: {
+            ok() {
+                this.item++
+            }
+        }
+    })
+</script>
+<style>
+    .div {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-left: 500px;
+        margin-top: 200px;
+    }
+    
+    .img1 {
+        position: absolute;
+        left: 0;
+    }
+    
+    .text {
+        margin-left: 500px;
+        font-size: 50px;
+    }
+</style>
+
+</html>
